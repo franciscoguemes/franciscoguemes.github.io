@@ -1,0 +1,25 @@
+This project represents my personal website
+
+I choose the following templates:
+	Dark Portfolio:
+		https://www.w3schools.com/w3css/tryw3css_templates_dark_portfolio.htm#
+		https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_dark_portfolio&stacked=h
+
+	CV:
+		https://www.w3schools.com/w3css/tryw3css_templates_cv.htm		
+		https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_cv&stacked=h
+
+These templates are under the folder "originals"
+
+
+All templates can be found at: https://www.w3schools.com/w3css/w3css_templates.asp
+
+Other interesting templates:
+	Black & White portfolio: https://www.w3schools.com/w3css/tryw3css_templates_bw_portfolio.htm
+	Nature Portfolio: https://www.w3schools.com/w3css/tryw3css_templates_portfolio.htm
+	People Portfolio: https://www.w3schools.com/w3css/tryw3css_templates_portfolio2.htm <-- See contact section -->
+	Band: https://www.w3schools.com/w3css/tryw3css_templates_band.htm#
+	Screen 50/50: https://www.w3schools.com/w3css/tryw3css_templates_fifty.htm#work
+
+	
+	
