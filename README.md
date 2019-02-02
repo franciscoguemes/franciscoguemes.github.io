@@ -1,3 +1,8 @@
+See the following examples of code:
+	W3.CSS Navigation Bar --> Collapsing the Navigation Bar: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_navbar_hide
+
+	W3.CSS sidebar: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_sidebar_over
+
 This project represents my personal website
 
 I choose the following templates:
