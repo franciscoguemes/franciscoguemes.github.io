@@ -35,22 +35,22 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="myFunction()">&#9776;</a>
   </div>
 
-  <div id="demo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-display-container">
+  <div id="mobileMenu" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-display-container">
     <a href="#home" class="w3-bar-item w3-button w3-right-align">Home</a>
     <a href="#about" class="w3-bar-item w3-button w3-right-align">About</a>
     <a href="#" class="w3-bar-item w3-button w3-right-align">CV</a>
     <a href="#" class="w3-bar-item w3-button w3-right-align">Catalogue</a>
     <a href="#contact" class="w3-bar-item w3-button w3-right-align">Contact</a>
-    <!-- TODO: Fix the flag appearing in the center of the menu-->
-    <a href="https://www.google.es" class="es w3-bar-item w3-button w3-right-align"></a>
-    <a href="https://www.google.com" class="gb w3-bar-item w3-button w3-right-align"></a>
-    <a href="https://www.google.de" class="de w3-bar-item w3-button w3-right-align"></a>
+    <!-- TODO: Fix the flag appearing in the center of the menu, not in the right-->
+    <a href="https://www.google.es" class="w3-bar-item es w3-button w3-right-align"></a>
+    <a href="https://www.google.com" class="w3-bar-item gb w3-button w3-right-align"></a>
+    <a href="https://www.google.de" class="w3-bar-item de w3-button w3-right-align"></a>
     </div>
   </div>
 
   <script>
     function myFunction() {
-      var x = document.getElementById("demo");
+      var x = document.getElementById("mobileMenu");
       if (x.className.indexOf("w3-show") == -1) {
         x.className += " w3-show";
       } else { 
