@@ -26,5 +26,9 @@ Other interesting templates:
 	Band: https://www.w3schools.com/w3css/tryw3css_templates_band.htm#
 	Screen 50/50: https://www.w3schools.com/w3css/tryw3css_templates_fifty.htm#work
 
-	
+
+/***********************************************************************************/
+To get autorefresh, at the project directory execute:
+	browser-sync start --server --files *.html *.css
+
 	
