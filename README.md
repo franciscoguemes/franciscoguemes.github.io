@@ -1,3 +1,8 @@
+See the following examples of code:
+	W3.CSS Navigation Bar --> Collapsing the Navigation Bar: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_navbar_hide
+
+	W3.CSS sidebar: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_sidebar_over
+
 This project represents my personal website
 
 I choose the following templates:
@@ -24,20 +29,21 @@ Other interesting templates:
 
 /***********************************************************************************/
 
-To get autorefresh, at the project directory execute:
+To get autorefresh, at the project directory execute: 
 	browser-sync start --server --files *.html *.css
 
 /***********************************************************************************/
-List all branches:
+List all branches: 
 	git branch -a
 
-Before creating a new branch, pull the changes from upstream. Your master needs to be up to date.
+Before creating a new branch, pull the changes from upstream. Your master needs to be up to date. 
 	git pull
 
-Create the branch on your local machine and switch in this branch :
+Create the branch on your local machine and switch in this branch : 
 	git checkout -b [name_of_your_new_branch]
 
-Push the branch on git :
+Push the branch on git : 
 	git push origin [name_of_your_new_branch]
 
 /***********************************************************************************/
+
