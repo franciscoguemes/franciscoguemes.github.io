@@ -16,11 +16,6 @@
     */
 }
 
-/* Applied for the flags in the menu bar only */
-.w3-display-container .es, .w3-display-container .gb, .w3-display-container .de {
-    margin-left: 5px;
-    margin-right: 5px;
-}
 
 /* Applied for the flags in the menu mobile bar only */
 #mobileMenu .es, #mobileMenu .gb, #mobileMenu .de {
