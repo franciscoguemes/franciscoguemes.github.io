@@ -1,3 +1,8 @@
+See the following examples of code:
+	W3.CSS Navigation Bar --> Collapsing the Navigation Bar: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_navbar_hide
+
+	W3.CSS sidebar: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_sidebar_over
+
 This project represents my personal website
 
 I choose the following templates:
@@ -21,5 +26,9 @@ Other interesting templates:
 	Band: https://www.w3schools.com/w3css/tryw3css_templates_band.htm#
 	Screen 50/50: https://www.w3schools.com/w3css/tryw3css_templates_fifty.htm#work
 
-	
+
+/***********************************************************************************/
+To get autorefresh, at the project directory execute:
+	browser-sync start --server --files *.html *.css
+
 	
