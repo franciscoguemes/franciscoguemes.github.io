@@ -21,5 +21,23 @@ Other interesting templates:
 	Band: https://www.w3schools.com/w3css/tryw3css_templates_band.htm#
 	Screen 50/50: https://www.w3schools.com/w3css/tryw3css_templates_fifty.htm#work
 
-	
-	
+
+/***********************************************************************************/
+
+To get autorefresh, at the project directory execute:
+	browser-sync start --server --files *.html *.css
+
+/***********************************************************************************/
+List all branches:
+	git branch -a
+
+Before creating a new branch, pull the changes from upstream. Your master needs to be up to date.
+	git pull
+
+Create the branch on your local machine and switch in this branch :
+	git checkout -b [name_of_your_new_branch]
+
+Push the branch on git :
+	git push origin [name_of_your_new_branch]
+
+/***********************************************************************************/
