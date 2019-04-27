@@ -46,4 +46,19 @@ Push the branch on git :
 	git push origin [name_of_your_new_branch]
 
 /***********************************************************************************/
+Resolutions:
 
+	STANDARD resolutions:
+
+		   0 -  600 : Small screens   -  w3-hide-small
+		 601 -  993 : Medium screens  -  w3-hide-medium
+		 994 -  inf : Big screens     -  w3-hide-large
+
+	My customized resolutions:
+		1080 x X -- Breakpoint. With a smaller width the CV is not shown properly
+
+		   0 -  600 : Small screens   -  w3-hide-small
+		 601 - 1079 : Medium screens  -  w3-hide-medium
+		1080 - infi	: Big screens     -  w3-hide-large
+
+/***********************************************************************************/
