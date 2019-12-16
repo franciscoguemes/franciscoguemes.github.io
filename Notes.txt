@@ -1,0 +1,5 @@
+TODO:
+
+    1- Make to send an email. If the email is successful then show another page saying the email was successful, otherwise show an error.
+    2- 
+
