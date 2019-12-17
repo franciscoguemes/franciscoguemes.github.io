@@ -7,4 +7,5 @@ $msg = wordwrap($msg,70);
 
 // send email
 mail("francisco@franciscoguemes.com","My subject",$msg);
+mail("francisco.jose.guemes.sevilla@gmail.com","My subject",$msg);
 ?>
