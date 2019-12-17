@@ -1,5 +1,20 @@
+file:///home/francisco/git/Francisco/gitlab/mywebsite/index.html#home
+
+https://franciscoguemes.com/mywebsite/
+
+
 TODO:
+
 
     1- Make to send an email. If the email is successful then show another page saying the email was successful, otherwise show an error.
     2- 
 
+
+
+https://www.w3schools.com/php/php_ref_mail.asp
+
+https://www.w3schools.com/php/func_mail_mail.asp
+
+https://www.w3schools.com/html/html_forms.asp
+
+https://www.w3schools.com/w3css/w3css_validation.asp
