@@ -1,5 +1,8 @@
 <?php
 
+// Define constant "TO" in order to send the email to that address
+define("TO", "francisco@franciscoguemes.com");
+
 // define variables and set to empty values
 $name = $email = $subject = $message = "";
 $valid_data = TRUE;
@@ -36,7 +39,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email_message = $name . " is sending you a message through the contact form at franciscoguemes.com" . "\r\n" .
     "Here is the message:" . "\r\n" . "\r\n" . $message;
 
-    $outcome = mail("francisco@franciscoguemes.com",$subject,$email_message,$headers);
+    $outcome = mail(TO,$subject,$email_message,$headers);
+    mail("francisco.jose.guemes.sevilla@gmail.com",$subject,$email_message,$headers);
     // mail("francisco.jose.guemes.sevilla@gmail.com",$subject,$message);
 
     if($outcome){
@@ -56,9 +60,6 @@ function test_input($data) {
   $data = htmlspecialchars($data);
   return $data;
 }
-
-
-
 
 /*
 
