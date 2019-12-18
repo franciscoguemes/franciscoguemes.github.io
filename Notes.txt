@@ -4,7 +4,8 @@ https://franciscoguemes.com/mywebsite/
 
 
 TODO:
-
+    1- Optimize the website to pass the test: 
+        https://gtmetrix.com/reports/franciscoguemes.com/nBg4xNSC
 
 
 
