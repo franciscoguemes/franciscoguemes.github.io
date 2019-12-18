@@ -41,22 +41,17 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <!-- <a href="https://www.google.es" class="es w3-bar-item w3-button w3-hide-small "></a> -->
     <!-- <a href="https://www.google.com" class="gb w3-bar-item w3-button w3-hide-small "></a> -->
     <!-- <a href="https://www.google.de" class="de w3-bar-item w3-button w3-hide-small "></a> -->
-
-    <!--  -->
-    <!-- <a href="javascript:void(0);" class="icon w3-right w3-hide-large w3-hide-medium" onclick="showMobileMenu()" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-    </a> -->
-    <a href="javascript:void(0)" class="w3-bar-block w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium w3-display-container" onclick="showMobileMenu()">&#9776;</a>
   </nav>
 
   <!-- TODO: Fix the flag appearing in the center of the menu, not in the right-->
-  <nav id="mobileMenu" class="w3-top w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-display-container w3-opacity-min">
-    <div id="mobileMenuLinks" class="w3-padding-32">
-      <a href="#home" class="w3-bar-item w3-button w3-right-align" onclick="showMobileMenu()">Home</a>
-      <a href="#about" class="w3-bar-item w3-button w3-right-align" onclick="showMobileMenu()">About Me</a>
-      <a href="#cv" class="w3-bar-item w3-button w3-right-align" onclick="showMobileMenu()">CV</a>
-      <!-- <a href="#catalogue" class="w3-bar-item w3-button w3-right-align" onclick="showMobileMenu()">Catalogue</a> -->
-      <a href="#contact" class="w3-bar-item w3-button w3-right-align" onclick="showMobileMenu()">Contact</a>
+  <nav id="mobileMenu" class="w3-top w3-black w3-bar-block w3-display-container w3-hide-large w3-hide-medium w3-opacity-min">
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right-align w3-hide-large w3-hide-medium" onclick="showMobileMenuLinks()">&#9776;</a>
+    <div id="mobileMenuLinks" class="w3-hide">
+      <a href="#home" class="w3-bar-item w3-button w3-right-align" onclick="showMobileMenuLinks()">Home</a>
+      <a href="#about" class="w3-bar-item w3-button w3-right-align" onclick="showMobileMenuLinks()">About Me</a>
+      <a href="#cv" class="w3-bar-item w3-button w3-right-align" onclick="showMobileMenuLinks()">CV</a>
+      <!-- <a href="#catalogue" class="w3-bar-item w3-button w3-right-align" onclick="showMobileMenuLinks()">Catalogue</a> -->
+      <a href="#contact" class="w3-bar-item w3-button w3-right-align" onclick="showMobileMenuLinks()">Contact</a>
 
       <!--TODO: Make the flags appear in the mobile menu-->
       <!-- <a href="https://www.google.es" class="w3-bar-item es w3-button w3-right-align"></a> -->
@@ -66,25 +61,14 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   </nav>
 
   <script>
-    function showMobileMenu() {
-      var x = document.getElementById("mobileMenu");
+    function showMobileMenuLinks() {
+      var x = document.getElementById("mobileMenuLinks");
       if (x.className.indexOf("w3-show") == -1) {
         x.className += " w3-show";
       } else { 
         x.className = x.className.replace(" w3-show", "");
       }
     }
-
-    function hideMobileMenu() {
-      var x = document.getElementById("mobileMenu");
-      if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-      } else { 
-        x.className = x.className.replace(" w3-show", "");
-      }
-    }
-
-
   </script>
 
 
