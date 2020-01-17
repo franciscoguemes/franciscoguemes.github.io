@@ -22,12 +22,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       echo "Message: " . $message . "<br>";
       echo "<br>";
       $valid_data = FALSE;
+      http_response_code(400);
   }
 
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
       echo "The supplied email:" . $email . " is not valid!!!";
       echo "<br>";
       $valid_data = FALSE;
+      http_response_code(400);
   }
 
   if( $valid_data ){
@@ -46,6 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if($outcome){
         echo "Your message has been successfully sent";
         echo "<br>";
+        http_response_code(200);
     }else{
         echo "There was a problem and the message was not sent. Please try again!";
         echo "<br>";
@@ -53,6 +56,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
 
+}else{ //This is supposed to handle only POST request that comes from the Contact form
+  //This is set to avoid possible hackers, malware, etc...
+  http_response_code(404);
 }
 
 function test_input($data) {
