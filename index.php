@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Francisco Güemes</title>
+  <meta charset="UTF-8">
+  <meta name="author" content="Francisco Güemes">
+  <meta name="description" content="Personal website">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Francisco Güemes || Personal Site</title>
+  <link rel="icon" href="./wfiles/images/icons/cool-guy-icon.png" type="image/x-icon">
+  
+  <!-- <link rel="stylesheet" href="./wfiles/css/flags.css"> -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  
+  <style>
+  body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+  .w3-row-padding img {margin-bottom: 12px}
+  /* Set the width of the sidebar to 120px */
+  /*.w3-sidebar {width: 120px;background: #222;}*/
+  /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+  /* #main {margin-left: 120px} */
+  /* Remove margins from "page content" on small screens */
+  @media only screen and (max-width: 600px) {/*#main {margin-left: 0}*/}
+  
+  .w3-content {max-width:1100px;}
+  </style>
+</head>
+
+<body class="w3-black">
+
+  <!--See section: Fixed Navigation bar: https://www.w3schools.com/w3css/w3css_navigation.asp-->
+  <nav class="w3-top w3-bar w3-black w3-display-container">
+    <a href="#home" class="w3-bar-item w3-button w3-hide-small">Home</a>
+    <a href="#about" class="w3-bar-item w3-button w3-hide-small">About Me</a>
+    <a href="#cv" class="w3-bar-item w3-button w3-hide-small">CV</a>
+    <!-- <a href="#catalogue" class="w3-bar-item w3-button w3-hide-small">Catalogue</a> -->
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small">Contact</a>
+
+    <!--TODO: Make the flags appear in the right corner-->
+    <!-- <a href="https://www.google.es" class="es w3-bar-item w3-button w3-hide-small "></a> -->
+    <!-- <a href="https://www.google.com" class="gb w3-bar-item w3-button w3-hide-small "></a> -->
+    <!-- <a href="https://www.google.de" class="de w3-bar-item w3-button w3-hide-small "></a> -->
+  </nav>
+
+  <!-- TODO: Fix the flag appearing in the center of the menu, not in the right-->
+  <nav id="mobileMenu" class="w3-top w3-black w3-bar-block w3-display-container w3-hide-large w3-hide-medium w3-opacity-min">
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right-align w3-hide-large w3-hide-medium" onclick="showMobileMenuLinks()">&#9776;</a>
+    <div id="mobileMenuLinks" class="w3-hide">
+      <a href="#home" class="w3-bar-item w3-button w3-right-align" onclick="showMobileMenuLinks()">Home</a>
+      <a href="#about" class="w3-bar-item w3-button w3-right-align" onclick="showMobileMenuLinks()">About Me</a>
+      <a href="#cv" class="w3-bar-item w3-button w3-right-align" onclick="showMobileMenuLinks()">CV</a>
+      <!-- <a href="#catalogue" class="w3-bar-item w3-button w3-right-align" onclick="showMobileMenuLinks()">Catalogue</a> -->
+      <a href="#contact" class="w3-bar-item w3-button w3-right-align" onclick="showMobileMenuLinks()">Contact</a>
+
+      <!--TODO: Make the flags appear in the mobile menu-->
+      <!-- <a href="https://www.google.es" class="w3-bar-item es w3-button w3-right-align"></a> -->
+      <!-- <a href="https://www.google.com" class="w3-bar-item gb w3-button w3-right-align"></a> -->
+      <!-- <a href="https://www.google.de" class="w3-bar-item de w3-button w3-right-align"></a> -->
+    </div>
+  </nav>
+
+  <script>
+    function showMobileMenuLinks() {
+      var x = document.getElementById("mobileMenuLinks");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else { 
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+  </script>
+
+
+
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+
+  <!-- ************************************************** -->
+  <!--                  Header/Home                       -->
+  <!-- ************************************************** -->
+  <header class="w3-container w3-padding-64 w3-center w3-black" id="home">
+    <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> Francisco Güemes</h1>
+    <p>Computer Science Engineer and Full Stack Developer</p>
+    <!--TODO: Change the picture-->
+    <img src="./wfiles/images/home/francisco.jpg" class="w3-image w3-round w3-hover-grayscale" style="width:60%" alt="Francisco Güemes">
+
+    <div class="w3-content w3-padding-16 w3-text-grey w3-xlarge">
+        <a href="https://www.facebook.com/franciscojose.guemessevilla" ><i class="fa fa-facebook fa-2x fa-social"></i></a>
+        <a href="https://www.instagram.com/francisco_guemes" ><i class="fa fa-instagram fa-2x fa-social"></i></a>
+        <!-- <a href="#" ><i class="fa fa-skype fa-2x fa-social"></i></a> -->
+        <a href="https://www.linkedin.com/in/franciscoguemes"><i class="fa fa-linkedin fa-2x fa-social"></i></a>
+        <a href="https://github.com/franciscoguemes" ><i class="fa fa-github fa-2x fa-social"></i></a>
+        <a href="https://stackoverflow.com/users/1866109/francisco-j-g%c3%bcemes-sevilla" ><i class="fa fa-signal fa-2x fa-social"></i></a>
+        <a href="https://franciscoguemes.wordpress.com"><i class="fa fa-wordpress fa-2x fa-social"></i></a>
+        <!-- <a href="#" ><i class="fa fa-youtube fa-2x fa-social"></i></a> -->
+    </div>
+
+    
+
+  </header>
+
+  <!-- ************************************************** -->
+  <!--                 End Header/Home                    -->
+  <!-- ************************************************** -->
+
+
+
+
+  <!-- ************************************************** -->
+  <!--                 About Section                      -->
+  <!-- ************************************************** -->
+  <!-- https://www.thebalancecareers.com/how-to-write-about-me-page-examples-4142367 -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+      <h2 class="w3-text-light-grey">About Me</h2>
+      <hr style="width:200px" class="w3-opacity">
+      <p>My mother used to say "Don't talk the talk walk the walk!" therefore I do not like to talk much about myself, I rather follow my own principles and passions in live.
+      </p>
+      <ul>
+        <li>IT PRO as carreer</li>
+        <li>Computer enthusiast as hobby</li>
+        <li>Nonconformist as philosophy</li>
+        <li>Nature lover as lifestile</li>
+        <li>Running as passion</li>
+        <li>Sunday hiker as religion</li>
+        <li>Artist as frustrated vocation</li>
+        <li>Avid reader as school</li>
+        <li>Life as a university</li>
+      </ul>
+    
+    <!--
+    <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
+    <p class="w3-wide">Photography</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:95%"></div>
+    </div>
+    <p class="w3-wide">Web Design</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:85%"></div>
+    </div>
+    <p class="w3-wide">Photoshop</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:80%"></div>
+    </div><br>
+    
+    <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">11+</span><br>
+        Partners
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">55+</span><br>
+        Projects Done
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">89+</span><br>
+        Happy Clients
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">150+</span><br>
+        Meetings
+      </div>
+    </div>
+
+    <button class="w3-button w3-light-grey w3-padding-large w3-section">
+      <i class="fa fa-download"></i> Download Resume
+    </button>
+    -->
+    
+    <!-- Grid for pricing tables -->
+    <!--
+    <h3 class="w3-padding-16 w3-text-light-grey">My Price</h3>
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half w3-margin-bottom">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
+          <li class="w3-padding-16">Web Design</li>
+          <li class="w3-padding-16">Photography</li>
+          <li class="w3-padding-16">5GB Storage</li>
+          <li class="w3-padding-16">Mail Support</li>
+          <li class="w3-padding-16">
+            <h2>$ 10</h2>
+            <span class="w3-opacity">per month</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="w3-half">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Pro</li>
+          <li class="w3-padding-16">Web Design</li>
+          <li class="w3-padding-16">Photography</li>
+          <li class="w3-padding-16">50GB Storage</li>
+          <li class="w3-padding-16">Endless Support</li>
+          <li class="w3-padding-16">
+            <h2>$ 25</h2>
+            <span class="w3-opacity">per month</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    -->
+    <!-- End Grid/Pricing tables -->
+    
+    <!-- Testimonials -->
+    <!--
+    <h3 class="w3-padding-24 w3-text-light-grey">My Reputation</h3>  
+    <img src="./originals/dark_portfolio/w3images/bandmember.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-margin-right">Chris Fox.</span> CEO at Mighty Schools.</p>
+    <p>Jane Doe saved us from a web disaster.</p><br>
+    
+    <img src="./originals/dark_portfolio/w3images/avatar_g2.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-margin-right">Rebecca Flex.</span> CEO at Company.</p>
+    <p>No one is better than Jane Doe.</p>
+    -->
+
+  </div>
+  <!-- ************************************************** -->
+  <!--                End About Section                   -->
+  <!-- ************************************************** -->
+
+
+  <!-- ************************************************** -->
+  <!--                  CV Section                        -->
+  <!-- ************************************************** -->
+  <div class="w3-padding-64 w3-content" id="cv">
+      <h2 class="w3-text-light-grey">CV</h2>
+      <hr style="width:200px" class="w3-opacity">
+
+    <!-- The Grid -->
+    <div class="w3-row-padding">
+  
+      <!-- Left Column -->
+      <div class="w3-third">
+      
+        <div class="w3-black w3-card-4">
+          <div class="w3-display-container">
+            <img src="./wfiles/images/cv/francisco_jose_guemes_sevilla-150x150.png" style="width:60%" class="w3-image w3-round w3-hover-grayscale" alt="Avatar">
+            <div class="w3-display-bottomleft w3-container w3-text-white">
+                <h6>Francisco Güemes</h6>
+              </div>
+          </div>
+          
+          <div class="w3-container">
+              
+            <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i><b class="w3-opacity">Computer Science Engineer</b></p>
+            <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i><b class="w3-opacity">Munich, DE</b></p>
+            <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i><b class="w3-opacity">francisco@franciscoguemes.com</b></p>
+            <!-- 
+              <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>Not available</p> 
+            -->
+            <hr>
+  
+            <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i></b><b class="w3-opacity">Languages</b></p>
+            <p class="w3-opacity">English</p>
+            <div class="w3-light-grey w3-round-xlarge">
+              <div class="w3-round-xlarge w3-teal" style="height:24px;width:100%">
+                  <h6 class="w3-center w3-opacity">Excellent</h6>
+              </div>
+            </div>
+            <p class="w3-opacity">Spanish</p>
+            <div class="w3-light-grey w3-round-xlarge">
+              <div class="w3-round-xlarge w3-teal" style="height:24px;width:100%">
+                <h6 class="w3-center w3-opacity">Native speaker</h6>
+              </div>
+            </div>
+            <p class="w3-opacity">German</p>
+            <div class="w3-dark-grey w3-round-xlarge">
+              <div class="w3-round-xlarge w3-teal" style="height:24px;width:75%">
+                  <h6 class="w3-center w3-opacity">B2</h6>
+              </div>
+            </div>
+            <br>
+
+            <!--Skills subsection-->
+            <!--
+            <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
+            <p>Java</p>
+            <div class="w3-light-grey w3-round-xlarge w3-small">
+              <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
+            </div>
+            <p>Javascript</p>
+            <div class="w3-light-grey w3-round-xlarge w3-small">
+              <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
+                <div class="w3-center w3-text-white">80%</div>
+              </div>
+            </div>
+            <p>Bash</p>
+            <div class="w3-light-grey w3-round-xlarge w3-small">
+              <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
+            </div>
+            <p>Media</p>
+            <div class="w3-light-grey w3-round-xlarge w3-small">
+              <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
+            </div>
+            <br>
+            -->
+
+          </div>
+        </div><br>
+  
+      <!-- End Left Column -->
+      </div>
+  
+      <!-- Right Column -->
+      <div class="w3-twothird">
+
+<!-- WORK EXPERIENCE -->
+
+        <div class="w3-container w3-card w3-black w3-margin-bottom">
+          <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b>Senior Fullstack Developer / Uniscon GmbH</b></h5>
+            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Sep 2018 - <span class="w3-tag w3-teal w3-round w3-text-light-grey">Current</span></h6>
+            <p class="w3-text-grey">Develop an in-house distributed software solution that integrate the core of the cloud platform with rest of the departments within the support, accountancy, marketing and sales departments the company including accounting, sales and marketing.</p>
+            <hr>
+          </div>
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b>Senior Backend Developer / Netcentric AG</b></h5>
+            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Nov 2016 - Aug 2018</h6>
+            <p class="w3-text-grey">Backend Software Engineer. Development of new features on top of AEM "out of the box" functionality. Some of these development tasks are: AEM Components, Workflows, OSGi Components/Services, Groovy Scripts for Content Maintenance, Tools for AEM platform administration, etc... All of these pieces of Software are at the core base of the integrated solution that the final users can enjoy. An example of our team work, or better said <a target="_blank" href="https://www.mercedes-benz.com/en/">the visible part of it</a></p>
+            <hr>
+          </div>
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b>Fullstack Developer / Tetralog Systems AG</b></h5>
+            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Dec 2013 - Oct 2016</h6>
+            <p class="w3-text-grey">Full stack software Engineer. Assistance in technical problems to the product lines development teams. Architectural design and technological strategy. Prototypes and proof of concepts.</p><br>
+          </div>
+        </div>
+
+
+<!-- EDUCATION -->
+  
+        <div class="w3-container w3-card w3-black">
+          <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
+
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b>University of Burgos</b></h5>
+            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Sept 2011 - Sept 2013</h6>
+            <p class="w3-text-grey">Doctorate on Engineering Research. (Not Finished)</p>
+            <hr>
+          </div>
+
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b>University of Burgos</b></h5>
+            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Oct 2012 - Jul2013</h6>
+            <p class="w3-text-grey">Master’s Degree in Secondary and High School Education, Vocational training and
+              language education. University of Burgos. Burgos. (Full time) (Evenings)</p>
+            <hr>
+          </div>
+
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b>University of Burgos</b></h5>
+            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Oct 2007 - Jul 2010</h6>
+            <p class="w3-text-grey">Computer Science Engineering</p>
+            <hr>
+          </div>
+          
+        
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b>University of Burgos</b></h5>
+            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Oct 2002 - Sep 2007</h6>
+            <p class="w3-text-grey">Technical Engineering in Computer Management</p><br>
+
+            <div class="w3-container">
+              <h5 class="w3-opacity"><b>Turku University of Applied Sciences</b></h5>
+              <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Aug 2005 - Jun 2006</h6>
+              <p class="w3-text-grey">Erasmus student</p><br>
+            </div>
+
+          </div>
+
+        </div>
+  
+      <!-- End Right Column -->
+      </div>
+      
+    <!-- End Grid -->
+    </div>
+  </div>
+  <!-- ************************************************** -->
+  <!--                  End CV Section                    -->
+  <!-- ************************************************** -->
+
+
+
+
+  <!-- ************************************************** -->
+  <!--                 Catalogue Section                  -->
+  <!-- ************************************************** -->
+  <!--
+  <div class="w3-padding-64 w3-content" id="catalogue">
+      <h2 class="w3-text-light-grey">Catalogue</h2>
+      <hr style="width:200px" class="w3-opacity">
+  
+      
+      <div class="w3-row-padding" style="margin:0 -16px">
+        <div class="w3-half">
+          <img src="./originals/dark_portfolio/w3images/wedding.jpg" style="width:100%">
+          <img src="./originals/dark_portfolio/w3images/rocks.jpg" style="width:100%">
+          <img src="./originals/dark_portfolio/w3images/sailboat.jpg" style="width:100%">
+        </div>
+  
+        <div class="w3-half">
+          <img src="./originals/dark_portfolio/w3images/underwater.jpg" style="width:100%">
+          <img src="./originals/dark_portfolio/w3images/chef.jpg" style="width:100%">
+          <img src="./originals/dark_portfolio/w3images/wedding.jpg" style="width:100%">
+          <img src="./originals/dark_portfolio/w3images/p6.jpg" style="width:100%">
+        </div>
+      </div>
+      
+  </div>
+  -->
+  <!-- ************************************************** -->
+  <!--               End Portfolio Section                -->
+  <!-- ************************************************** -->
+
+
+
+  <!-- ************************************************** -->
+  <!--                  Contact Section                   -->
+  <!-- ************************************************** -->
+  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Contact Me</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Munich, DE</p>
+      <!-- <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +00 151515</p> -->
+      <!-- <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: youremail@youremail.com</p> -->
+    </div><br>
+    <p>If you have an amazing project or a greate proposal then drop me a line here:</p>
+
+    <!-- <form action="./wfiles/php/send_message.php" target="_blank" method="POST">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="name"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="email"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="subject"></p>
+      <p><textarea rows="5" cols="50" class="w3-input w3-padding-16" type="text" placeholder="Message" required name="message"></textarea></p>
+      <div class="g-recaptcha" data-sitekey="_______________PUBLIC_KEY_______________"></div>
+      <p>
+        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+          <i class="fa fa-paper-plane"></i>SEND MESSAGE
+        </button>
+      </p>
+    </form> -->
+
+    <form action="/#contact" method="POST">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="name" ></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="email"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="subject"></p>
+      <p><textarea rows="5" cols="50" class="w3-input w3-padding-16" type="text" placeholder="Message" required name="message"></textarea></p>
+      <div class="g-recaptcha" data-sitekey="6LciPdAUAAAAAP2eygPtjbEgd-x7QLTjzNCbpfux"></div>
+      <p>
+        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+          <i class="fa fa-paper-plane"></i>SEND MESSAGE
+        </button>
+      </p>
+    </form>
+    
+    <div class="status">
+      <?php
+
+        function post_captcha($user_response) {
+          $fields_string = '';
+          $fields = array(
+              'secret' => '6LciPdAUAAAAAB5Rf3MNgr_U2TkNQaYqiO4C1MD6',
+              'response' => $user_response
+          );
+          foreach($fields as $key=>$value)
+          $fields_string .= $key . '=' . $value . '&';
+          $fields_string = rtrim($fields_string, '&');
+
+          $ch = curl_init();
+          curl_setopt($ch, CURLOPT_URL, 'https://www.google.com/recaptcha/api/siteverify');
+          curl_setopt($ch, CURLOPT_POST, count($fields));
+          curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
+          curl_setopt($ch, CURLOPT_RETURNTRANSFER, True);
+
+          $result = curl_exec($ch);
+          curl_close($ch);
+
+          return json_decode($result, true);
+      }
+
+      function post_email(){
+
+        $fields = array(
+          'name' => $_POST["name"],
+          'email' => $_POST["email"],
+          'subject' => $_POST["subject"],
+          'message' => $_POST["message"]
+        );
+        foreach($fields as $key=>$value)
+        $fields_string .= $key . '=' . $value . '&';
+        $fields_string = rtrim($fields_string, '&');
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://franciscoguemes.com/wfiles/php/send_message.php' );
+        curl_setopt($ch, CURLOPT_POST, count($fields));
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
+        // curl_setopt($ch, CURLOPT_RETURNTRANSFER, True);
+
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        return $response;
+      }
+      
+
+      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        // Call the function post_captcha
+        $res = post_captcha($_POST['g-recaptcha-response']);
+
+        if (!$res['success']) {
+          echo '<p>Please go back and make sure you check the security CAPTCHA box.</p><br>';
+          return;
+        }
+
+        $res = post_email();
+          if($res){
+            echo '<br><p>EMAIL: Your email was sent successfully!</p><br>';
+          }else{
+            echo '<br><p>EMAIL: There was a problem sending your email! Please try later or directly contact me on: francisco@franciscoguemes.com</p><br>';
+          }
+
+      }
+
+      ?>
+    </div>
+  
+  </div>
+  <!-- ************************************************** -->
+  <!--               End Contact Section                  -->
+  <!-- ************************************************** -->
+  
+
+  <!-- Footer -->
+  <!--
+  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  </footer>
+  -->
+  <!-- End footer -->
+
+
+</div>
+<!-- END PAGE CONTENT -->
+
+<!-- Manitu logo -->
+<div class="w3-container w3-center w3-padding-24">
+  <span class="w3-small w3-opacity">gehosted von</span>
+  <br />
+  <a href="https://www.manitu.de/webhosting/" title="Webhosting" target="_blank">
+    <img src="data:image/png;base64,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" alt="manitu" style="width: 135px;" />
+  </a>
+</div>
+
+</body>
+</html>
+
