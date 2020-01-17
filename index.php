@@ -460,16 +460,44 @@
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : '' ?>"></p>
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="subject" value="<?php echo isset($_POST['subject']) ? $_POST['subject'] : '' ?>"></p>
       <p><textarea rows="5" cols="50" class="w3-input w3-padding-16" type="text" placeholder="Message" required name="message" ><?php echo isset($_POST['message']) ? $_POST['message'] : '' ?></textarea></p>
+      
+      <div id="captchaWarningAlert" class="w3-panel w3-yellow w3-hide"></div>
       <div class="g-recaptcha" data-sitekey="6LciPdAUAAAAAP2eygPtjbEgd-x7QLTjzNCbpfux"></div>
+
       <p>
         <button class="w3-button w3-light-grey w3-padding-large" type="submit">
           <i class="fa fa-paper-plane"></i>SEND MESSAGE
         </button>
       </p>
+
+      <div id="captchaErrorAlert" class="w3-panel w3-red w3-hide"></div> 
+      <div id="captchaSuccessAlert" class="w3-panel w3-green w3-hide"></div> 
+
     </form>
     
-    <div class="status">
-      <?php
+    <script>
+      function toggleAlertMessage(id, title, message) {
+        var alertElement = document.getElementById(id);
+
+        var h3Node = document.createElement("h3");  
+        var textNode = document.createTextNode(title);
+        h3Node.appendChild(textNode);
+        alertElement.appendChild(h3Node);
+
+        var pNode = document.createElement("p");  
+        textNode = document.createTextNode(message);
+        pNode.appendChild(textNode);
+        alertElement.appendChild(pNode);
+
+        if (alertElement.className.indexOf("w3-show") == -1) {
+          alertElement.className += " w3-show";
+        } else { 
+          alertElement.className = alertElement.className.replace(" w3-show", "");
+        }
+      }
+    </script>
+
+    <?php
 
         function post_captcha($user_response) {
           $fields_string = '';
@@ -509,12 +537,17 @@
         curl_setopt($ch, CURLOPT_URL, 'https://franciscoguemes.com/wfiles/php/send_message.php' );
         curl_setopt($ch, CURLOPT_POST, count($fields));
         curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
-        // curl_setopt($ch, CURLOPT_RETURNTRANSFER, True);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 
-        $response = curl_exec($ch);
+        curl_setopt($ch, CURLOPT_HEADER, true);    // we want headers
+        curl_setopt($ch, CURLOPT_NOBODY, true);    // we don't need body
+        curl_setopt($ch, CURLOPT_TIMEOUT,10);
+
+        $output = curl_exec($ch);
+        $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         curl_close($ch);
 
-        return $response;
+        return $httpcode;
       }
       
 
@@ -523,21 +556,42 @@
         $res = post_captcha($_POST['g-recaptcha-response']);
 
         if (!$res['success']) {
-          echo '<p>Please go back and make sure you check the security CAPTCHA box.</p><br>';
+          echo '<script type="text/javascript">',
+               'toggleAlertMessage(
+                 "captchaWarningAlert",
+                 "Warning!",
+                 "Please make sure you check the security CAPTCHA box."
+                );',
+               '</script>'
+          ;
           return;
         }
 
-        $res = post_email();
-          if($res){
-            echo '<br><p>EMAIL: Your email was sent successfully!</p><br>';
-          }else{
-            echo '<br><p>EMAIL: There was a problem sending your email! Please try later or directly contact me on: francisco@franciscoguemes.com</p><br>';
-          }
+        $httpcode = post_email();
+        if($httpcode == 200){
+          echo '<script type="text/javascript">',
+               'toggleAlertMessage(
+                 "captchaSuccessAlert",
+                 "Success!",
+                 "Your email was sent successfully!"
+                );',
+               '</script>'
+          ;
+        }else{
+          echo '<script type="text/javascript">',
+               'toggleAlertMessage(
+                 "captchaErrorAlert",
+                 "Error!",
+                 "There was a problem sending your email! Please try later or directly contact me on: <b>francisco@franciscoguemes.com</b>"
+                );',
+               '</script>'
+          ;
+        }
 
       }
 
-      ?>
-    </div>
+    ?>
+    
   
   </div>
   <!-- ************************************************** -->
