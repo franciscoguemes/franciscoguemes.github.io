@@ -4,8 +4,15 @@ https://franciscoguemes.com/mywebsite/
 
 
 TODO:
-    1- Optimize the website to pass the test: 
+    0- Scripts for automatically deploy the website
+    1- Minimize HTML/JS/CSS
+    2- Separate HTML from CSS and JS
+    3- Optimize the website to pass the test: 
         https://gtmetrix.com/reports/franciscoguemes.com/nBg4xNSC
+
+    4- Automatic testing for the website
+
+    5- Customize the 404 response. I.e. On a get request to https://franciscoguemes.com/wfiles/php/send_message.php return the same page as in https://franciscoguemes.com/a
 
 
 
