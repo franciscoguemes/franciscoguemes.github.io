@@ -499,10 +499,16 @@
 
     <?php
 
-        function post_captcha($user_response) {
+      // Define constants 
+      define("CAPTCHA_URL", "https://www.google.com/recaptcha/api/siteverify");
+      define("CAPTCHA_SECRET_KEY", "6LciPdAUAAAAAB5Rf3MNgr_U2TkNQaYqiO4C1MD6");
+      define("SEND_EMAIL_URL", "https://franciscoguemes.com/wfiles/php/send_message.php");
+
+
+      function post_captcha($user_response) {
           $fields_string = '';
           $fields = array(
-              'secret' => '6LciPdAUAAAAAB5Rf3MNgr_U2TkNQaYqiO4C1MD6',
+              'secret' => CAPTCHA_SECRET_KEY,
               'response' => $user_response
           );
           foreach($fields as $key=>$value)
@@ -510,7 +516,7 @@
           $fields_string = rtrim($fields_string, '&');
 
           $ch = curl_init();
-          curl_setopt($ch, CURLOPT_URL, 'https://www.google.com/recaptcha/api/siteverify');
+          curl_setopt($ch, CURLOPT_URL, CAPTCHA_URL );
           curl_setopt($ch, CURLOPT_POST, count($fields));
           curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
           curl_setopt($ch, CURLOPT_RETURNTRANSFER, True);
@@ -534,13 +540,10 @@
         $fields_string = rtrim($fields_string, '&');
 
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'https://franciscoguemes.com/wfiles/php/send_message.php' );
+        curl_setopt($ch, CURLOPT_URL, SEND_EMAIL_URL );
         curl_setopt($ch, CURLOPT_POST, count($fields));
         curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-
-        curl_setopt($ch, CURLOPT_HEADER, true);    // we want headers
-        curl_setopt($ch, CURLOPT_NOBODY, true);    // we don't need body
         curl_setopt($ch, CURLOPT_TIMEOUT,10);
 
         $output = curl_exec($ch);
@@ -568,6 +571,7 @@
         }
 
         $httpcode = post_email();
+        
         if($httpcode == 200){
           echo '<script type="text/javascript">',
                'toggleAlertMessage(
@@ -582,7 +586,7 @@
                'toggleAlertMessage(
                  "captchaErrorAlert",
                  "Error!",
-                 "There was a problem sending your email! Please try later or directly contact me on: <b>francisco@franciscoguemes.com</b>"
+                 "There was a problem sending your email! Please try later or directly contact me on: francisco@franciscoguemes.com"
                 );',
                '</script>'
           ;
