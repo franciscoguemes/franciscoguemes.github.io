@@ -49,6 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }else{
         echo "There was a problem and the message was not sent. Please try again!";
         echo "<br>";
+        http_response_code(500);
     }
   }
 
