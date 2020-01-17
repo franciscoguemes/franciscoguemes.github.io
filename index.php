@@ -459,7 +459,7 @@
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="name" value="<?php echo isset($_POST['name']) ? $_POST['name'] : '' ?>"></p>
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : '' ?>"></p>
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="subject" value="<?php echo isset($_POST['subject']) ? $_POST['subject'] : '' ?>"></p>
-      <p><textarea rows="5" cols="50" class="w3-input w3-padding-16" type="text" placeholder="Message" required name="message" value="<?php echo isset($_POST['message']) ? $_POST['message'] : '' ?>"></textarea></p>
+      <p><textarea rows="5" cols="50" class="w3-input w3-padding-16" type="text" placeholder="Message" required name="message" ><?php echo isset($_POST['message']) ? $_POST['message'] : '' ?></textarea></p>
       <div class="g-recaptcha" data-sitekey="6LciPdAUAAAAAP2eygPtjbEgd-x7QLTjzNCbpfux"></div>
       <p>
         <button class="w3-button w3-light-grey w3-padding-large" type="submit">
