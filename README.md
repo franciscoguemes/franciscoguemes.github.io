@@ -30,7 +30,7 @@ Other interesting templates:
 /***********************************************************************************/
 
 To get autorefresh, at the project directory execute: 
-	browser-sync start --server --files *.html *.css
+	browser-sync start --server --files *.html *.css *.js
 
 /***********************************************************************************/
 List all branches: 
