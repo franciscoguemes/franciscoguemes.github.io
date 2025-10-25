@@ -108,3 +108,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# Claude local state
+.claude/.local
+.claude/memory
