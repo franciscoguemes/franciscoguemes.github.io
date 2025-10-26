@@ -56,6 +56,25 @@ eslint src/ --ext .js --fix
 - Use event delegation for dynamic elements
 - Add error handling for API calls
 
+## Git Commit Guidelines
+
+### Commit Message Format
+- Write clear, concise commit messages describing the changes
+- Use present tense ("Add feature" not "Added feature")
+- Include bullet points for multiple changes
+- DO NOT include "Co-Authored-By: Claude" or similar AI attribution
+- DO NOT add any AI-generated footers or signatures
+
+### Example Commit Message
+```
+Update languages section to use standardized CEFR levels
+
+- Changed to professional CEFR standard
+- Spanish: C2 - Native
+- English: C2 - Proficient
+- German: B2 - Upper Intermediate
+```
+
 ## References
 - W3.CSS Documentation: https://www.w3schools.com/w3css/
 - W3.CSS Templates: https://www.w3schools.com/w3css/w3css_templates.asp
