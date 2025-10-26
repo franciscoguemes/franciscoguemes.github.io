@@ -442,27 +442,80 @@
     <p>If you have an amazing project or a great proposal then drop me a line here:</p>
 
     <!--
-      Formspree.io integration
-      To set up:
-      1. Go to https://formspree.io/
-      2. Sign up for a free account
-      3. Create a new form and get your form endpoint
-      4. Replace YOUR_FORM_ID below with your actual Formspree form ID
-
-      The form endpoint should look like: https://formspree.io/f/YOUR_FORM_ID
+      Formspree.io integration with AJAX submission
+      Benefits: No page redirect, form clears automatically, better UX
     -->
-    <form action="https://formspree.io/f/xdkpozqv" method="POST">
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="name"></p>
-      <p><input class="w3-input w3-padding-16" type="email" placeholder="Email" required name="email"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="subject"></p>
-      <p><textarea rows="5" cols="50" class="w3-input w3-padding-16" placeholder="Message" required name="message"></textarea></p>
+    <form id="contactForm" action="https://formspree.io/f/xdkpozqv" method="POST">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="name" id="contactName"></p>
+      <p><input class="w3-input w3-padding-16" type="email" placeholder="Email" required name="email" id="contactEmail"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="subject" id="contactSubject"></p>
+      <p><textarea rows="5" cols="50" class="w3-input w3-padding-16" placeholder="Message" required name="message" id="contactMessage"></textarea></p>
+
+      <!-- Status messages -->
+      <div id="formStatus" class="w3-panel w3-hide"></div>
 
       <p>
-        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+        <button class="w3-button w3-light-grey w3-padding-large" type="submit" id="submitBtn">
           <i class="fa fa-paper-plane"></i> SEND MESSAGE
         </button>
       </p>
     </form>
+
+    <script>
+      // Handle form submission with AJAX
+      document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        var form = this;
+        var formData = new FormData(form);
+        var submitBtn = document.getElementById('submitBtn');
+        var statusDiv = document.getElementById('formStatus');
+
+        // Disable submit button
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> SENDING...';
+
+        // Hide any previous status messages
+        statusDiv.className = 'w3-panel w3-hide';
+        statusDiv.innerHTML = '';
+
+        // Submit form via AJAX
+        fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        }).then(function(response) {
+          if (response.ok) {
+            // Success
+            statusDiv.className = 'w3-panel w3-green w3-show';
+            statusDiv.innerHTML = '<h3>Success!</h3><p>Your message has been sent successfully. I\'ll get back to you soon!</p>';
+
+            // Clear form
+            form.reset();
+
+            // Hide success message after 5 seconds
+            setTimeout(function() {
+              statusDiv.className = 'w3-panel w3-hide';
+            }, 5000);
+          } else {
+            // Error from server
+            return response.json().then(function(data) {
+              throw new Error(data.error || 'Form submission failed');
+            });
+          }
+        }).catch(function(error) {
+          // Show error message
+          statusDiv.className = 'w3-panel w3-red w3-show';
+          statusDiv.innerHTML = '<h3>Error!</h3><p>There was a problem sending your message. Please try again later or contact me directly at francisco@franciscoguemes.com</p>';
+        }).finally(function() {
+          // Re-enable submit button
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i class="fa fa-paper-plane"></i> SEND MESSAGE';
+        });
+      });
+    </script>
     
   
   </div>
