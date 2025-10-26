@@ -471,6 +471,11 @@
         var submitBtn = document.getElementById('submitBtn');
         var statusDiv = document.getElementById('formStatus');
 
+        // Check if running on allowed domain
+        var allowedDomain = 'franciscoguemes.github.io';
+        var currentDomain = window.location.hostname;
+        var isProduction = currentDomain === allowedDomain || currentDomain === 'franciscoguemes.com';
+
         // Disable submit button
         submitBtn.disabled = true;
         submitBtn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> SENDING...';
@@ -489,16 +494,26 @@
         }).then(function(response) {
           if (response.ok) {
             // Success
+            var successMessage = '<h3>Success!</h3><p>Your message has been sent successfully. I\'ll get back to you soon!</p>';
+
+            // Add developer warning if not on production domain
+            if (!isProduction) {
+              successMessage += '<hr><p><strong>⚠️ DEVELOPER WARNING:</strong><br>' +
+                'Form submitted from <code>' + currentDomain + '</code><br>' +
+                'Formspree is configured to only accept submissions from: <code>' + allowedDomain + '</code><br>' +
+                '<strong>Email will NOT be sent!</strong> This is for testing only.</p>';
+            }
+
             statusDiv.className = 'w3-panel w3-green w3-show';
-            statusDiv.innerHTML = '<h3>Success!</h3><p>Your message has been sent successfully. I\'ll get back to you soon!</p>';
+            statusDiv.innerHTML = successMessage;
 
             // Clear form
             form.reset();
 
-            // Hide success message after 5 seconds
+            // Hide success message after 8 seconds (longer if dev warning shown)
             setTimeout(function() {
               statusDiv.className = 'w3-panel w3-hide';
-            }, 5000);
+            }, isProduction ? 5000 : 8000);
           } else {
             // Error from server
             return response.json().then(function(data) {
@@ -507,8 +522,18 @@
           }
         }).catch(function(error) {
           // Show error message
+          var errorMessage = '<h3>Error!</h3><p>There was a problem sending your message. Please try again later or contact me directly at francisco@franciscoguemes.com</p>';
+
+          // Add developer info if not on production
+          if (!isProduction) {
+            errorMessage += '<hr><p><strong>ℹ️ DEVELOPER INFO:</strong><br>' +
+              'Current domain: <code>' + currentDomain + '</code><br>' +
+              'Allowed domain: <code>' + allowedDomain + '</code><br>' +
+              'Formspree may be blocking this submission due to domain mismatch.</p>';
+          }
+
           statusDiv.className = 'w3-panel w3-red w3-show';
-          statusDiv.innerHTML = '<h3>Error!</h3><p>There was a problem sending your message. Please try again later or contact me directly at francisco@franciscoguemes.com</p>';
+          statusDiv.innerHTML = errorMessage;
         }).finally(function() {
           // Re-enable submit button
           submitBtn.disabled = false;
